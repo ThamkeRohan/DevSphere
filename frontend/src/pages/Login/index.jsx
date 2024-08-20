@@ -40,7 +40,7 @@ export default function Login() {
     })
   }
   function handleGoogleLogin() {
-     window.open(`${import.meta.env.VITE_SERVER_BASE_URL}/auth/oauth/google`, "_self");
+     window.open(`/api/auth/oauth/google`, "_self");
   }
   function handleOnFocus(e) {
     const fieldName = e.target.name;

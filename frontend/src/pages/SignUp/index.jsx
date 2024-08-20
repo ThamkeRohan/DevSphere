@@ -44,7 +44,7 @@ export default function SignUp() {
     }
     function handleGoogleLogin() {
       window.open(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/auth/oauth/google`,
+        `/api/auth/oauth/google`,
         "_self"
       );
     }

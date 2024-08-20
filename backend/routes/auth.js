@@ -13,7 +13,7 @@ router.get("/oauth/google", passport.authenticate("google"))
 router.get(
   "/oauth/google/callback",
   passport.authenticate("google", {
-    successRedirect: process.env.CLIENT_URL,
+    successRedirect: "/",
     failureRedirect: "/api/auth/oauth/google/failed",
   })
 );

@@ -49,6 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+
 app.use("/api/auth", AuthRoute)
 app.use("/api/notifications", NotificationRoute);
 app.use("/api/posts", PostRoute)
@@ -59,6 +60,7 @@ app.use("/api/tags", TagRoute)
 const root = path.resolve()
 app.use(express.static(path.join(root, "/frontend/dist")))
 app.get("*", (req, res, next) => {
+  console.log(req.protocol, req.get("host"))
   res.sendFile(path.join(root, "frontend", "dist", "index.html"))
 })
 
