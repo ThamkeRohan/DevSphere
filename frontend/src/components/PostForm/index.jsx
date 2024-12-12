@@ -9,6 +9,8 @@ import { POST_FORM_MESSAGES } from "../../constants/formMessages";
 import Toast from "../Toast";
 import AutosizeTextarea from "../AutosizeTextarea";
 
+const UPLOAD_PRESET = "mz03rpce";
+
 function PostForm({
   initialTitle = "",
   initialCoverImageUrl = "",
@@ -38,7 +40,7 @@ function PostForm({
     }
     const imageData = new FormData();
     imageData.append("file", e.target.files[0]);
-    imageData.append("upload_preset", import.meta.env.VITE_UPLOAD_PRESET);
+    imageData.append("upload_preset", UPLOAD_PRESET);
     uploadImageFn
       .execute({ imageData })
       .then((data) => setCoverImageUrl(data.secure_url));
