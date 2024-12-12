@@ -9,6 +9,8 @@ import Error from "../../components/Error"
 import { PROFILE_FORM_MESSAGES } from "../../constants/formMessages"
 import Toast from "../../components/Toast"
 
+const UPLOAD_PRESET = "mz03rpce";
+
 export default function EditProfile() {
     const loggedInUser = useAuth()
     const {updateLoggedInUser} = useAuthUpdate()
@@ -40,7 +42,7 @@ export default function EditProfile() {
     function handleUploadImage(e) {
         const imageData = new FormData();
         imageData.append("file", e.target.files[0]);
-        imageData.append("upload_preset", import.meta.env.VITE_UPLOAD_PRESET);
+        imageData.append("upload_preset", UPLOAD_PRESET);
         uploadImageFn.execute({ imageData }).then((data) => {
           setUserProfile(prev => ({...prev, profileImageUrl: data.secure_url}))
         });
