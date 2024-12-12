@@ -138,6 +138,12 @@ export default function Login() {
           <div className="switch-auth">
             Don't have an account? <Link to="/signup">Signup</Link>
           </div>
+
+          <div>
+            <b>Email:  </b> guest@gmail.com
+            <br />
+            <b>Password:  </b> Guest@123
+          </div>
         </div>
       </>
     </div>
